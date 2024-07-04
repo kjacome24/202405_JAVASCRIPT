@@ -1,0 +1,13 @@
+///////Example 1 adding result to a variable
+const calificacion = 7.0;
+let mensajeTernario = (calificacion>= 8.0) ? "Aprobaste, felicitaciones wero!" : "Yukatan, te toca estudiar wero!";
+console.log(mensajeTernario)
+
+//////////////Example 2 using as return with a nested ternary inside. 
+const  obtenerNivelAcceso = edad =>{
+    return edad < 18 ? 'Acceso Restringido' : (edad <= 65 ? 'Acceso Completo' : 'Acceso Sénior');
+
+}
+
+console.log(obtenerNivelAcceso(30));  // "Acceso Completo"
+console.log(obtenerNivelAcceso(70));  // "Acceso Sénior"
