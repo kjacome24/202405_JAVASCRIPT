@@ -28,12 +28,55 @@ const videojuegos = Object.freeze([
     ]);
 
 ////////////////////1. Un conjunto de videojuegos cuyo número de identificación es divisible uniformemente por 3.
+console.log("////////////////////1. Un conjunto de videojuegos cuyo número de identificación es divisible uniformemente por 3.");
+const divisible_3_videojuegos = videojuegos.filter(videojuego => videojuego.id % 3 === 0);
+console.log(divisible_3_videojuegos);
+
 ////////////////////2. Un conjunto de videojuegos que pertenecen al género «acción-RPG».
+console.log("////////////////////2. Un conjunto de videojuegos que pertenecen al género «acción-RPG».");
+const accion_rpg_videojuegos = videojuegos.filter(videojuego => videojuego.genero==="acción-RPG");
+console.log(accion_rpg_videojuegos);
+
 ////////////////////3. Un conjunto de videojuegos que tienen más de un género.
+console.log("////////////////////3. Un conjunto de videojuegos que tienen más de un género.");
+const mas_de_un_genero = videojuegos.filter(videojuego => videojuego.genero.includes(" "));
+console.log(mas_de_un_genero);
+
 ////////////////////4. Una lista con los nombres de los videojuegos.
+console.log("////////////////////4. Una lista con los nombres de los videojuegos.");
+const videojuegos_names = videojuegos.map(videojuego => videojuego.nombre);
+console.log(videojuegos_names);
+
+
 ////////////////////5. Una lista con los nombres de los videojuegos con un número de identificación superior a 19.
+console.log("////////////////////5. Una lista con los nombres de los videojuegos con un número de identificación superior a 19.");
+const id_more_than_19 = videojuegos.filter(videojuego=> videojuego.id>19).map(videojuego => videojuego.nombre);
+console.log(id_more_than_19);
+
 ////////////////////6. Una lista con los nombres de los videojuegos cuyo único género es «shooter».
+console.log("////////////////////6. Una lista con los nombres de los videojuegos cuyo único género es «shooter».");
+const shooter_names_games = videojuegos.filter(videojuego => videojuego.genero.includes("shooter")).map(videojuego => videojuego.nombre);
+console.log(shooter_names_games);
+
 ////////////////////7. Una lista que contenga solo el primer género de todos los videojuegos cuyo segundo género es «aventura».
+console.log("////////////////////7. Una lista que contenga solo el primer género de todos los videojuegos cuyo segundo género es «aventura».");
+const games_ex_7 = videojuegos.filter(videojuego => videojuego.genero.includes("-aventura")).map(videojuego => videojuego.genero.slice(0,(videojuego.genero.indexOf("-"))));
+console.log(games_ex_7);
+
+
 ////////////////////8. Un conteo del número de videojuegos que son del género «party».
+console.log("////////////////////8. Un conteo del número de videojuegos que son del género «party».");
+const count_party_games = videojuegos.filter(videojuego=> videojuego.genero.includes("party")).length;
+console.log(count_party_games);
+
+
 ////////////////////9. Una lista con todos los videojuegos excepto aquellos cuyo número de identificación sea múltiplo de 5.
+console.log("////////////////////9. Una lista con todos los videojuegos excepto aquellos cuyo número de identificación sea múltiplo de 5.");
+const games_not_divisable_by_5 = videojuegos.filter(videojuego => videojuego.id % 5 !== 0);
+console.log(games_not_divisable_by_5);
+
 ////////////////////10. Una lista con todos los videojuegos y para el videojuego con el número de identificación 5, se cambia su género por «otro».
+console.log("////////////////////10. Una lista con todos los videojuegos y para el videojuego con el número de identificación 5, se cambia su género por «otro».");
+const new_video_games = [...videojuegos.slice(0,4),{...videojuegos[4], genero : "otro"},...videojuegos.slice(5)]
+console.log(new_video_games)
+

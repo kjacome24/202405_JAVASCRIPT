@@ -318,3 +318,5 @@ console.log(id_videojuegos);
 ///////Example 2 of the platform
 const idsJuegos = videojuegos.map(juego => juego.id);
 console.log(idsJuegos);
+
+
