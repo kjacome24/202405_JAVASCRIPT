@@ -1,0 +1,8 @@
+.navegador ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 20px;
+    color: tomato;
+    justify-content: center;
+}
