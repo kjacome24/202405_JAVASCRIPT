@@ -5,6 +5,7 @@ import Estudiante from './components/Estudiante';
 import Formulario from './components/Formulario';
 import { useState } from 'react';
 import FiltrarEstudiantes from './components/FiltrarEstudiantes';
+import MapFilter from './components/MapFilter';
 
 function App() {
   const estudiantes0 = [
@@ -53,7 +54,7 @@ function App() {
 
       <div className='flex-item'>
         <div className='div1'>
-
+          < MapFilter />
         </div>
       </div>
 

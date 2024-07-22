@@ -41,7 +41,7 @@ const Formulario = (props)=> {
                 <label className="form-control" htmlFor="edad">Edad: </label>
                 <input className="form-control" type="number" id='edad' name='edad' edad={edad} value={edad} onChange={(e)=>setEdad(e.target.value)}/>
             </div>
-            <button className="btn btn-warning" >
+            <button type="submit" className="btn btn-warning" >
                 Agregar
             </button>
         </form>
