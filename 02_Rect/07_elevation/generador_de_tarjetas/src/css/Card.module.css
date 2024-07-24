@@ -1,0 +1,20 @@
+/* Card.module.css */
+.card2 {
+    width: 200px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 5%;
+    align-items: center;
+    margin: 0.1%;
+    padding: 1%;
+
+}
+
+button {
+    width: 50%;
+
+
+}
+

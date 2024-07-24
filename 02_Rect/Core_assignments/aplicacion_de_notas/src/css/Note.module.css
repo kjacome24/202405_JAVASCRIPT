@@ -1,0 +1,26 @@
+.high{
+    color: red;
+}
+
+.medium{
+    color: yellow;
+}
+
+.low{
+    color: green;
+}
+
+.note{
+    padding: 5%;
+    margin: 1%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+p{width: 100px;}
+

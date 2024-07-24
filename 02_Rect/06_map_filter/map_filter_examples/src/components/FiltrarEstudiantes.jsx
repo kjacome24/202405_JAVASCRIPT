@@ -1,17 +1,18 @@
 import { useState, useTransition } from "react";
 
 const FiltrarEstudiantes = (props)=> {
-    const [filtro, setFiltro] = useState("");
+    const {filtro, setFiltro} = props;
 
-    const actualizarEstudianteFiltrados = (e) => {
-        e.preventDefault();
-        const listafiltrada = props.ListaEstudiantesFiltrados.filter((estudiante,index)=> estudiante.nombre.toLowerCase().includes(filtro.toLowerCase() ));
-        props.setListaEstudiantesFiltrados(listafiltrada);
-    }
+    // const actualizarEstudianteFiltrados = (e) => {
+    //     e.preventDefault();
+    //     const listafiltrada = props.ListaEstudiantesFiltrados.filter((estudiante,index)=> estudiante.nombre.toLowerCase().includes(filtro.toLowerCase() ));
+    //     props.setListaEstudiantesFiltrados(listafiltrada);
+    // }
+
     return (
         <>
             <h2>Filtrar estudiantes por nombre</h2>
-            <form onSubmit={actualizarEstudianteFiltrados}>
+            {/* <form onSubmit={actualizarEstudianteFiltrados}> */}
                 <label htmlFor="filtro">
                     Nombre:
                 </label>
@@ -19,7 +20,7 @@ const FiltrarEstudiantes = (props)=> {
                 <button className="btn btn-secondary">
                     Filtrar
                 </button>
-            </form>
+            {/* </form> */}
         </>
     );
 }

@@ -16,8 +16,8 @@ function App() {
 
   const [estudiantes, setEstudiantes] = useState(estudiantes0);
   const [showform, setShowform] = useState(false);
-  const [ListaEstudiantesFiltrados, setListaEstudiantesFiltrados] = useState(estudiantes);
-
+  // const [ListaEstudiantesFiltrados, setListaEstudiantesFiltrados] = useState(estudiantes);
+  const [filtro, setFiltro] = useState("");
 
   const agregarEstudiante = (nombre,apellido,edad) => {
     const new_estudent = {
@@ -25,11 +25,10 @@ function App() {
     }
     const new_list = [...estudiantes, new_estudent];
     setEstudiantes(new_list);
-    setListaEstudiantesFiltrados(new_list);
-
-
+    // setListaEstudiantesFiltrados(new_list);
   };
 
+  const listafiltrada = estudiantes.filter((estudiante,index)=> estudiante.nombre.toLowerCase().includes(filtro.toLowerCase() ));
 
   return (
     <div className='main'>
@@ -40,9 +39,11 @@ function App() {
       </div>
 
       <div className='flex-item'>
-        < FiltrarEstudiantes ListaEstudiantesFiltrados={estudiantes} setListaEstudiantesFiltrados={setListaEstudiantesFiltrados} />
+        < FiltrarEstudiantes 
+        // ListaEstudiantesFiltrados={estudiantes} setListaEstudiantesFiltrados={setListaEstudiantesFiltrados} 
+        setFiltro={setFiltro} filtro={filtro} />
         <div className='estudiantes'>
-        {ListaEstudiantesFiltrados.map((estudiante, index) => (
+        {listafiltrada.map((estudiante, index) => (
             <Estudiante key={index}
               {...estudiante}
             />
