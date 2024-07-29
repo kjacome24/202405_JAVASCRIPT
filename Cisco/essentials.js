@@ -2374,4 +2374,7 @@ console.log(pi);
 
 
 
+const maxPokemonId = 20;
+const randomId = Math.floor(Math.random() * maxPokemonId) + 1;
+console.log(randomId)
 
