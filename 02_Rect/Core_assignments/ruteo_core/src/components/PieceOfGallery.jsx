@@ -12,9 +12,7 @@ const PieceOfGallery = ({galleryArray})=>{
     const currentIndex = galleryArray.findIndex(pieaceOfArt=> pieaceOfArt.id === idparams);
     const previousArray = currentIndex === 0 ? (currentArray) : galleryArray[currentIndex - 1];
     const nextArray = galleryArray.length - 1 === currentIndex ? currentArray : galleryArray[currentIndex + 1];
-    console.log(currentArray.thumbnail.alt_text)
-    console.log(currentArray.imgUrl)
-    ;
+
 
 
     return (
