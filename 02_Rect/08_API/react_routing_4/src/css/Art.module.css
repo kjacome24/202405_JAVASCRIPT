@@ -1,0 +1,42 @@
+/* components/Art.module.css */
+
+
+.artContainer {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  
+  .artImage {
+    max-width: 900px;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  
+  .navigationButtons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  
+  .navigationButtons button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  
+  .navigationButtons button:hover {
+    background-color: #45a049;
+  }
+  

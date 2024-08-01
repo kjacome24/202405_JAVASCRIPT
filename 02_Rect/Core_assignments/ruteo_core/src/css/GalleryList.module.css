@@ -1,0 +1,25 @@
+.galery {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    overflow: auto; 
+  }
+
+img {
+  height: 50px;
+  width: 50px;
+}
+
+.galery div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.galery h4{
+  width: 500px;
+}
+
+.galery img{
+  width: 50px;
+}

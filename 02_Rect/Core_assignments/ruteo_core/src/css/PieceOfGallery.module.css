@@ -1,0 +1,12 @@
+.piecegalery {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    overflow: auto; 
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+
+  button{margin: 1%;
+  width: 100px;}

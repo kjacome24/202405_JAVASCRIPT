@@ -1,5 +1,5 @@
 {
-  "name": "api_con_axios_e_imagenes",
+  "name": "ruteo_core",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,11 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    " ": "^1.7.2",
-    "boostrap": "^2.0.0",
+    "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.25.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
