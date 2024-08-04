@@ -5,7 +5,7 @@ import GalleryList from './components/GalleryList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route, Link, Navigate } from 'react-router-dom';
 import PieceOfGallery from './components/PieceOfGallery';
-
+import NotFound from './components/NotFound'
 
 function App() {
   const [galleryArray, setGalleryArray] = useState([{}])
@@ -26,6 +26,7 @@ function App() {
           </>
           }/>
         <Route path="/art/:id" element={<PieceOfGallery galleryArray={galleryArray} />}/>
+        <Route path="*" element={<NotFound />}/>
       </Routes>
     </div>
   )

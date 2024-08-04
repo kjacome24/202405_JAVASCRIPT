@@ -1,6 +1,7 @@
 import styles from '../css/GalleryList.module.css';
 import { Link } from 'react-router-dom';
 
+
 const GalleryList = ({galleryArray}) => {
     return (
         <div className={styles.galery}>

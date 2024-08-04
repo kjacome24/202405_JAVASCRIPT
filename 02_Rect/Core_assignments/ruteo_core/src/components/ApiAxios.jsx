@@ -16,8 +16,15 @@ const ApiAxios = ({setGalleryArray})=> {
                 const newArrayAPI = response.data.data.map(art =>(
                     {...art, imgUrl:`https://www.artic.edu/iiif/2/${art.image_id}/full/843,/0/default.jpg` }
                 ) 
+                
             );
-            setGalleryArray(newArrayAPI)
+            const filteredArray = newArrayAPI.filter(pieaceOfArt => 
+                pieaceOfArt.id !== null &&
+                pieaceOfArt.image_id !== null &&
+                pieaceOfArt.thumbnail !== null &&
+                pieaceOfArt.thumbnail.alt_text !== null
+            )
+            setGalleryArray(filteredArray)
             }
         ).catch(
             error => {
