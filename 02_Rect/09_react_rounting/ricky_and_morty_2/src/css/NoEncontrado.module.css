@@ -1,0 +1,12 @@
+.tarjetanoencontrado{
+    margin: 0 auto 0 auto;
+    width: 800px;
+    height: 500px;
+    flex-wrap: wrap;
+    margin-top: 1%;
+}
+
+.tarjetanoencontrado img{
+    height: 300px;
+    width: 300px;
+}

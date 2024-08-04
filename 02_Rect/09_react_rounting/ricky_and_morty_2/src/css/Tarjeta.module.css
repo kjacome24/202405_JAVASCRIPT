@@ -1,0 +1,26 @@
+.tarjeta{
+    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+    flex-wrap: wrap;
+    margin-top: 1%;
+}
+
+img{
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.residentepadre {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: auto;
+}
+
+.residentes div img {
+    height: 100px;
+    width: 100px;
+    margin: 5%;
+}

@@ -1,0 +1,15 @@
+.filtro{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid 
+}
+
+.filtroadentro{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

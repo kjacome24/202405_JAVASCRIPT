@@ -1,0 +1,112 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  width: 100%;
+
+}
+
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  font-size: 2rem;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+
+  bottom: 0;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+}
+
+.notFoundContainer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #E74C3C;
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+.contenido{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+.encabezadoconlinks{
+  display: flex;
+  justify-content:space-evenly;
+}
