@@ -1,60 +1,50 @@
-import { useState, useEffect, useRef } from "react";
-import {useNavigate} from "react-router-dom";
+import { useReducer } from "react";
+import {useNavigate } from "react-router-dom";
+import FormularioReducer from '../reducers/FormularioReducer'
 
 const Formulario = (props)=> {
-    const [estado, setEstado] = useState({
+////Using UseReducer
+    const estadoReducer = {
         nombre: "",
         apellido: "",
         edad: 0,
         errorFormulario: ""
-    })
+    };
 
-    const actualizarEstado = (e)=> {
-        setEstado({...estado,
-            [e.target.name]: e.target.value
-        })
-    }
+    const [estado, dispatcher] = useReducer(FormularioReducer, estadoReducer)
+////
+
 
     const navigate = useNavigate();
 
     const agregar = (e)=>{
         e.preventDefault();
         if (!estado.nombre || !estado.apellido || !estado.edad) {
-            setEstado({...estado,errorFormulario: "Por favor, completa todos los campos." })
+            dispatcher({tipo:"SET_ERROR"})
             return;
         }
         props.agregarEstudiante(estado);
-        setEstado({
-            nombre: "",
-            apellido: "",
-            edad: 0,
-            errorFormulario: ""
+        dispatcher({
+            tipo: "RESET_FORM"
         })
         navigate("/estudiantes")
     }
     
-    /*Use of ref */
-    const nombreInputRef = useRef(null);
-    useEffect(() => {
-        nombreInputRef.current.focus();
-    }, []);
-    /* */
-
     return (
         <form className="form-control" onSubmit={(e)=> agregar(e)}>
             {estado.errorFormulario && <p style={{ color: 'red' }}>{estado.errorFormulario}</p>}
             <div>
                 <label className="form-control" htmlFor="nombre"> Nombre: </label>
-                <input className="form-control" type="text" id='nombre' name='nombre' value={estado.nombre} onChange={(e) => actualizarEstado(e) } ref={nombreInputRef}/>
+                <input className="form-control" type="text" id='nombre' name='nombre' value={estado.nombre} onChange={(e) => dispatcher({tipo: "ACTUALIZARESTADO", objeto:e}) } />
                 
             </div>
             <div>
                 <label className="form-control" htmlFor="apellido">Apellido: </label>
-                <input className="form-control" type="text" id='apellido' name='apellido' value={estado.apellido} onChange={(e) => actualizarEstado(e)}/>
+                <input className="form-control" type="text" id='apellido' name='apellido' value={estado.apellido} onChange={(e) => dispatcher({tipo: "ACTUALIZARESTADO", objeto:e})}/>
             </div>
             <div>
                 <label className="form-control" htmlFor="edad">Edad: </label>
-                <input className="form-control" type="number" id='edad' name='edad'  value={estado.edad} onChange={(e) => actualizarEstado(e)}/>
+                <input className="form-control" type="number" id='edad' name='edad'  value={estado.edad} onChange={(e) => dispatcher({tipo: "ACTUALIZARESTADO", objeto:e})}/>
             </div>
             <button type="submit" className="btn btn-warning" >
                 Agregar

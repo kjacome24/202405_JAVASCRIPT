@@ -3,11 +3,11 @@ import FiltrarEstudiantes from '../components/FiltrarEstudiantes';
 import { Link } from 'react-router-dom';
 
 
-const ListaEstudiantes = ({setFiltro, filtro, listafiltrada}) =>{
+const ListaEstudiantes = ({dispatcher, filtro, listafiltrada}) =>{
 
     return (
         <>
-            < FiltrarEstudiantes setFiltro={setFiltro} filtro={filtro} />
+            < FiltrarEstudiantes dispatcher={dispatcher} filtro={filtro} />
             <br></br>
             <div className='estudiantes'>
                 <br></br>

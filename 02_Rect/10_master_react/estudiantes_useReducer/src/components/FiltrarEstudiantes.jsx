@@ -1,7 +1,7 @@
 import { useState, useTransition } from "react";
 
 const FiltrarEstudiantes = (props)=> {
-    const {filtro, setFiltro} = props;
+    const {filtro, dispatcher} = props;
 
     // const actualizarEstudianteFiltrados = (e) => {
     //     e.preventDefault();
@@ -17,7 +17,7 @@ const FiltrarEstudiantes = (props)=> {
                 <label htmlFor="filtro">
                     Nombre:
                 </label>
-                <input type="text" id="filtro" name="filtro" value={filtro} onChange={(e)=> setFiltro(e.target.value)}/>
+                <input type="text" id="filtro" name="filtro" value={filtro} onChange={(e)=> dispatcher({tipo: "FILTRO", filtro: e.target.value})}/>
 
                 {/* <button className="btn btn-secondary">
                     Filtrar
