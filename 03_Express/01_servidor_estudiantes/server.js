@@ -1,64 +1,30 @@
 import express from 'express';
-/////THis is needed for using the body
+import rutasEstudiantes from './rutas/rutasEstudiantes.js'
+import dotenv from 'dotenv';
+import cors from 'cors';
+import conectarBD from './configuracion/base_de_datos.js';
+
+dotenv.config();
+
 const app = express(); 
+
+
+const PUERTO = process.env.PUERTO ;
+
+
+
+///TO connect to BD
+conectarBD();
+// midleware
 app.use(express.json());
-app.use(express.urlencoded({extended: true}))
-
-
-
-const PUERTO = 8080;
-
-let estudiantes = [
-    {
-        nombre:"Alex",
-        apellido : "Valdimort",
-        edad: 23,
-        id: 123
-    },
-    {
-        nombre:"Kevin",
-        apellido : "Morelo",
-        edad: 25,
-        id: 124
-    }
-];
+app.use(cors());
+app.use(express.urlencoded({extended: true}));
 
 
 
 
-app.get('/api/estudiantes', (req,res)=>{
-    // console.log(req)
-    return res.status(200).json(estudiantes);
-})
+app.use('/api/estudiantes', rutasEstudiantes);
 
-
-app.get('/api/estudiante/:id', (req,res)=>{
-    const id = Number(req.params.id);
-    const estudianteEncontrado = estudiantes.find((estudiante)=>estudiante.id===id);
-    if(!estudianteEncontrado){
-
-    }
-    return res.status(200).json(estudianteEncontrado);
-});
-
-app.post('/api/nuevo/estudiante',(req,res)=>{
-    console.log(req.body);
-    const {nombre,apellido,edad,id} = req.body;
-    ///validation 
-    if(!nombre || !apellido|| !edad || !id){
-        res.statusMessage = "Por favor proporciona 'Nombre , apellido, edad y ID'"
-        return res.status(406).json({mensaje: "Es necesario proporciona 'Nombre , apellido, edad y ID"})
-    }
-    const nuevoEstudiante = {
-        nombre,
-        apellido, 
-        edad, 
-        id
-    }
-    estudiantes.push(nuevoEstudiante);
-    console.log(estudiantes)
-    return res.status(201).json(nuevoEstudiante)
-})
 
 
 /////localhost:8080

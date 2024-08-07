@@ -1,11 +1,11 @@
 {
-  "name": "01_servidor_estudiantes",
+  "name": "conectandose_con_mongoose",
   "version": "1.0.0",
   "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "dev": "npx nodemon"
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
