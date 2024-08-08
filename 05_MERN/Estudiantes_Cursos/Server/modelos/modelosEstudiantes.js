@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import {ColeccionCursos } from '../modelos/modelosCursos.js'
 
 const ColeccionEstuadinte = mongoose.Schema(
     {
@@ -8,18 +9,16 @@ const ColeccionEstuadinte = mongoose.Schema(
         apellido: {type : String,
             required : [true, "Es necesario proporcionar el apellido"]
         },
-        edad : {type : Number,
-            required : [true, "Es necesario proporcionar el apellido"]
-        },
+        cursos : [ColeccionCursos],
         email : {type : String,
             required : [true, "Es necesario proporcionar el email"],
             unique : true
         }
-    }
+    }, { timestamps: true }
 );
 
 
 
 const Estudiante = mongoose.model("estudiantes",ColeccionEstuadinte);
 
-export default Estudiante;
+export {Estudiante} ;

@@ -1,5 +1,5 @@
-import Estudiante from '../modelos/modelosEstudiantes.js'
-
+import {Estudiante} from '../modelos/modelosEstudiantes.js'
+import { Curso } from '../modelos/modelosCursos.js';
 
 const ControladorEstudiante = {
     obtenerTodos : async  (req,res)=>{
@@ -26,16 +26,14 @@ const ControladorEstudiante = {
     },
     crearEstudiante: async (req,res)=>{
         console.log(req.body);
-        const {nombre,apellido,edad,email} = req.body;
+        const {nombre,apellido,email} = req.body;
         ///validation 
-        if(!nombre || !apellido|| !edad || !email ){
-            res.statusMessage = "Por favor proporciona 'Nombre , apellido, edad y email "
-            return res.status(406).json({mensaje: "Es necesario proporciona 'Nombre , apellido y edad"})
+        if(!nombre || !apellido || !email ){
+            return res.status(406).json({mensaje: "Es necesario proporciona 'Nombre , apellido y email"})
         }
         const nuevoEstudiante = {
             nombre,
             apellido, 
-            edad,
             email
         }
         try{
@@ -50,7 +48,7 @@ const ControladorEstudiante = {
         } 
     },
     actualizarEstudiente: async (req,res)=> {
-        const {nombre,apellido,edad,email} = req.body;
+        const {nombre,apellido,email} = req.body;
         const email_in = req.params.email;
         const datosAActualizar = {};
         if(nombre) {
@@ -59,16 +57,13 @@ const ControladorEstudiante = {
         if(apellido){
             datosAActualizar.apellido = apellido;
         }
-        if(edad){
-            datosAActualizar.edad = edad; 
-        }
         if(email){
             datosAActualizar.email = email;
         }
         console.log(datosAActualizar);
         console.log(email_in)
         try{
-            const estudianteActualizado = await Estudiante.findOneAndUpdate({email: email_in}, datosAActualizar, {new:true , runValidators: true} )
+            const estudianteActualizado = await Estudiante.findOneAndUpdate({email: email_in}, datosAActualizar, {new:true})
             if(!estudianteActualizado){
                 return res.status(404).json({mensaje: "Este correo no le pertenence a ningun estudiante"})
             }
@@ -91,6 +86,22 @@ const ControladorEstudiante = {
         }catch(error){
             return res.status(400).json(error);
         }
+    },
+    agregarCurso : async (req,res)=> {
+        const {email, clave} = req.body;
+        try{
+            const cursoActual = await Curso.findOne({clave});
+            const estudiante = await Estudiante.findOne({email});
+            const cursoExiste = estudiante.cursos.filter((curso)=> curso.clave===clave);
+            if (cursoExiste.length>=1){
+                return res.status(404).json({mensaje: "Este curso ya fue agregado anteriromente!"})
+            }
+            const estudianteActualizado = await Estudiante.findOneAndUpdate({email}, {$push: {cursos: cursoActual}}, {new:true});
+            return res.status(200).json(estudianteActualizado);
+        }catch(error){
+            return res.status(400).json(error);
+        }
+
     }
 }
 
