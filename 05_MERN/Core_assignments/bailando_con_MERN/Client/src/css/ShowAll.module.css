@@ -1,0 +1,57 @@
+.listado{
+    height: 535px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.title{
+    flex: 2;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lista{
+    flex: 6;
+    width: 100%;
+
+    margin: 0 auto;
+}
+
+.sublista{
+    height: 400px ;
+    margin: 0 auto;
+    overflow: auto;
+
+    width: 30%;
+}
+
+h1{
+
+    font-weight: bolder;
+}
+
+.sublista div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3%;
+
+}
+
+.no_link_style {
+    text-decoration: none; /* Removes the underline */
+    color: blue; /* Inherits the color from the parent element */
+}

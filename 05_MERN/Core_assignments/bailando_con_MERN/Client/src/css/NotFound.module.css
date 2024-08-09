@@ -1,0 +1,17 @@
+.tarjetanoencontrado{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1%;
+}
+
+.tarjetanoencontrado div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3%;
+    height: 500px;
+    width: 50%;
+}

@@ -40,10 +40,10 @@ const ControladorEstudiante = {
             const estudianteEnBaseDeDatos = await Estudiante.create(nuevoEstudiante);
             return res.status(201).json(estudianteEnBaseDeDatos);
         }catch(error) {
-            if (error.errorResponse.code === 11000) {
-                return res.status(400).json({ mensaje: "El email ya está registrado" });
-            } else{
-            }
+            // if (error.errorResponse.code === 11000) {
+            //     return res.status(400).json({ mensaje: "El email ya está registrado" });
+            // } else{
+            // }
             return res.status(400).json(error);
         } 
     },

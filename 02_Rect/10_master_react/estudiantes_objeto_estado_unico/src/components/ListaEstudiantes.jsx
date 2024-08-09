@@ -1,4 +1,4 @@
-import Estudiante from '../components/Estudiante';
+
 import FiltrarEstudiantes from '../components/FiltrarEstudiantes';
 import { Link } from 'react-router-dom';
 

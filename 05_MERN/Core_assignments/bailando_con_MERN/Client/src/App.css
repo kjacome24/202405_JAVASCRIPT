@@ -10,12 +10,6 @@
 }
 
 .contenido{
-
+  background-color: white;
   height: 585px;
-  
-}
-
-.card {
-  padding: 2em;
-  margin: 1%
 }
