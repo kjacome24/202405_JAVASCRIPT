@@ -10,9 +10,7 @@ const ShowAllPlaylists = ({ dataAPISongs, setDataAPISongs, playlistsfiltered }) 
         setArrayForShowAll([...playlistsfiltered]);
     }, [playlistsfiltered]);
 
-    useEffect(() => {
-        console.log(arrayForShowAll);
-    }, [arrayForShowAll]);
+
 
     return (
         <div className={styles.listado}>

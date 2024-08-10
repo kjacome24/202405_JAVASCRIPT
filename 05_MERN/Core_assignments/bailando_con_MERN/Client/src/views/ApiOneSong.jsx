@@ -51,8 +51,6 @@ const ApiOneSong = ({dataAPISongs, setDataAPISongs,filterSongs})=>{
                     arrayAPISongs: newListSongs,
                     songsfiltered: filterSongs(newListSongs, prevState.filterSongs)
                 }));
-
-
                 navigate("/songs")
             }
         ).catch(
@@ -61,6 +59,11 @@ const ApiOneSong = ({dataAPISongs, setDataAPISongs,filterSongs})=>{
                 setDataAPISongs({ ...dataAPISong, errorAPISongs: "Error al eliminar el estudiante." });
             })
     }
+
+    const updateSong = ()=> {
+        
+    }
+
 
     if (dataAPISong.errorApiSong) {
         return <NotFound/>

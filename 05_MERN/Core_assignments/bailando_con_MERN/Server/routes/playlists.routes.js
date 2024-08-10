@@ -13,4 +13,6 @@ playlistsRoutes.post('/new',playlistsController.createOne);
 
 playlistsRoutes.delete('/:name', playlistsController.deleteOne);
 
+playlistsRoutes.put('/:name', playlistsController.updateOne);
+
 export default playlistsRoutes;

@@ -8,7 +8,7 @@ const ApiOnePlaylist = ({ dataAPISongs, setDataAPISongs, filterPlaylists }) => {
     const navigate = useNavigate();
     const params = useParams();
     const name = params.name;
-    console.log(name)
+
 
     const [dataAPIPlaylist, setDataAPIPlaylist] = useState({
         dataApiOne: {
@@ -25,7 +25,7 @@ const ApiOnePlaylist = ({ dataAPISongs, setDataAPISongs, filterPlaylists }) => {
 
     const getData = () => {
         const url = `http://localhost:8080/api/playlists/${name}`;
-        console.log(url)
+
         axios(url).then(
             response => {
                 setDataAPIPlaylist({ ...dataAPIPlaylist, dataApiOne: response.data });

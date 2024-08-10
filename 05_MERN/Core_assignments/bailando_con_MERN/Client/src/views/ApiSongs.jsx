@@ -6,9 +6,6 @@ const ApiSongs = ({dataAPISongs, setDataAPISongs})=>{
         getData();
     },[])
 
-    useEffect(()=>{
-        console.log(dataAPISongs)
-    },[dataAPISongs])
 
     const getData =   ()=> {
         const url ='http://localhost:8080/api/songs/';

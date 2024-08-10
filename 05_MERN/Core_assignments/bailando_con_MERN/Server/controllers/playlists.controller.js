@@ -57,8 +57,39 @@ const playlistsController = {
             return res.status(400).json(error);
         }
     },
-    
-    
+    updateOne: async (req,res)=> {
+
+        const {name,songs} = req.body;
+
+        const name_in = req.params.name;
+
+        const dataToBeUpdated = {};
+        if(name) {
+            dataToBeUpdated.name = name;
+        }
+        if(songs){
+            dataToBeUpdated.songs = songs;
+        }
+
+        try{
+            const updatedPlaylist = await Playlist.findOneAndUpdate({name: name_in}, dataToBeUpdated, {new:true , runValidators: true})
+            console.log("Entramos a la ruta correcta")
+            console.log(updatedPlaylist)
+            if(!updatedPlaylist){
+                return res.status(404).json({message: "We could not find the Name of the album!"})
+            }
+            return res.status(200).json(updatedPlaylist);
+        }catch(error) {
+            const messages = {};
+            if (error.name === 'ValidationError') {
+                Object.keys(error.errors).forEach(key => {
+                    messages[key] = error.errors[key].message;
+                });
+            } 
+            return res.status(400).json({ ...messages });
+            }
+    }
+    ,
     deleteOne: async (req,res)=> {
         const name =  req.params.name;
         try{

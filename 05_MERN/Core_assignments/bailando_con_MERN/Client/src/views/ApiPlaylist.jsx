@@ -10,7 +10,7 @@ const ApiPlaylist = ({dataAPISongs, setDataAPISongs})=>{
         const url ='http://localhost:8080/api/playlists/';
         axios(url).then(
             response => {
-                console.log(response.data);
+
                 setDataAPISongs(prevState => ({
                     ...prevState,
                     arrayAPIPlaylists: response.data

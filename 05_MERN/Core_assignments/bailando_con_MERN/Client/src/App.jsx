@@ -14,6 +14,9 @@ import ApiPlaylist from './views/ApiPlaylist'
 import FormSong from './components/FormSong'
 import FormPlaylist from './components/FormPlaylist'
 import ShowAllPlaylists from './views/ShowAllPlaylists'
+import FormSongUpdate from './components/FormSongUpdate'
+import FormPlaylistUpdate from './components/FormPlaylistUpdate'
+
 
 function App() {
   const [dataAPISongs, setDataAPISongs] = useState({
@@ -64,8 +67,10 @@ function App() {
         <Routes>
           <Route path="/songs" element={<ShowAllSongs dataAPISongs={dataAPISongs} setDataAPISongs={setDataAPISongs} songsfiltered={dataAPISongs.songsfiltered}/>}/>
           <Route path="/songs/:title" element={ <ApiOneSong dataAPISongs={dataAPISongs} setDataAPISongs={setDataAPISongs} filterSongs={filterSongs}/>}/>
+          <Route path="/songs/edit/:title" element={ <FormSongUpdate dataAPISongs={dataAPISongs} setDataAPISongs={setDataAPISongs}/>}/>
           <Route path="/playlists" element={<ShowAllPlaylists dataAPISongs={dataAPISongs} setDataAPISongs={setDataAPISongs} playlistsfiltered={dataAPISongs.playlistsfiltered}/>}/>
           <Route path="/playlists/:name" element={ <ApiOnePlaylist dataAPISongs={dataAPISongs} setDataAPISongs={setDataAPISongs} filterPlaylists={filterPlaylists}/>}/>
+          <Route path="/playlists/edit/:name" element={ <FormPlaylistUpdate  dataAPISongs={dataAPISongs} setDataAPISongs={setDataAPISongs}/>}/>
           <Route path="/songs/new" element={<FormSong dataAPISongs={dataAPISongs} setDataAPISongs={setDataAPISongs} />} />
           <Route path="/playlists/new" element={<FormPlaylist dataAPISongs={dataAPISongs} setDataAPISongs={setDataAPISongs} />} />
           <Route path="*" element={<NotFound />}/>
