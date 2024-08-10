@@ -1,0 +1,41 @@
+.cardSong{
+    height: 535px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardSong div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 3%;
+    height: 500px;
+    width: 50%;
+    flex-wrap: wrap;
+
+}
+
+ul{
+    height: 200px;
+}
+
+.cardSong div div{
+    padding-top: 1%;
+    height: 90px;
+    
+    margin: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-right: 3%;
+}
+
+.cardSong div div li{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+

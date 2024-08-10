@@ -12,7 +12,7 @@ const songSchema = new mongoose.Schema(
         artist: {type : String,
             required : [true, "G please let us know who is the artist!"],
             minlength: [10, "Hey brother an artist with less than 10 sounds shady!"],
-            maxlength: [255, "Hey take it easy, is the name of the artist not an essay!"]
+            maxlength: [25, "Hey take it easy, is the name of the artist not an essay!"]
         },
         year : {type : Number,
             required : [true, "Hey G do not forget to add the year!"],
